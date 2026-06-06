@@ -1,0 +1,18 @@
+{
+  "crops": [
+    {
+      "source": "pages/page-images/page-0002.png",
+      "bbox": [100, 520, 1100, 900],
+      "padding": 8,
+      "output": "assets/display-crops/table-001.png",
+      "label": "Table 1"
+    },
+    {
+      "source": "pages/page-images/page-0005.png",
+      "bbox": [140, 260, 1040, 760],
+      "padding": 8,
+      "output": "assets/display-crops/figure-001.png",
+      "label": "Figure 1"
+    }
+  ]
+}

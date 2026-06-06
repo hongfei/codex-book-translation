@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Publisher Grade Book Map",
+  "type": "object",
+  "required": ["book", "sections"],
+  "properties": {
+    "book": {
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "title": {"type": "string"},
+        "subtitle": {"type": "string"},
+        "author": {"type": "string"},
+        "translator": {"type": "string"},
+        "language": {"type": "string"},
+        "source_language": {"type": "string"},
+        "source": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "title"],
+        "properties": {
+          "id": {"type": "string"},
+          "type": {
+            "type": "string",
+            "enum": ["cover", "title_page", "copyright", "toc", "front_matter", "preface", "introduction", "chapter", "part", "appendix", "notes", "bibliography", "index", "back_matter", "other"]
+          },
+          "title": {"type": "string"},
+          "source_pages": {
+            "type": "array",
+            "items": {"type": "integer", "minimum": 1}
+          },
+          "source_file": {"type": "string"},
+          "draft_md": {"type": "string"},
+          "xhtml": {"type": "string"},
+          "children": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "figures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id"],
+              "properties": {
+                "id": {"type": "string"},
+                "label": {"type": "string"},
+                "source_page": {"type": "integer", "minimum": 1},
+                "crop": {"type": "string"},
+                "alt": {"type": "string"},
+                "caption": {"type": "string"}
+              },
+              "additionalProperties": true
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "anchor"],
+              "properties": {
+                "id": {"type": "string"},
+                "anchor": {"type": "string"},
+                "placement": {"type": "string", "enum": ["nearby", "footnote", "endnote", "popup"]},
+                "backlink": {"type": "string"}
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

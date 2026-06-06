@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publisher-Grade Book Translation"
+  short_description: "Translate books into publication-ready ebooks"
+  default_prompt: "Use $publisher-grade-book-translation to translate this source book into a polished EPUB while preserving figures, notes, and structure."

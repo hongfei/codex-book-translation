@@ -1,0 +1,48 @@
+{
+  "source": {
+    "path": "original/source.pdf",
+    "title": "Example Book",
+    "author": "Example Author",
+    "edition": "1st edition",
+    "page_count": 2
+  },
+  "pages": [
+    {
+      "page": 1,
+      "image": "pages/page-images/page-0001.png",
+      "page_type": "front_matter",
+      "chapter": "Preface",
+      "elements": [
+        {
+          "type": "heading",
+          "text": "Preface",
+          "bbox": [120, 180, 900, 250]
+        },
+        {
+          "type": "paragraph",
+          "bbox": [120, 280, 980, 1320]
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "image": "pages/page-images/page-0002.png",
+      "page_type": "body",
+      "chapter": "Chapter 1",
+      "elements": [
+        {
+          "type": "table",
+          "label": "Table 1",
+          "bbox": [100, 520, 1100, 900],
+          "crop": "assets/display-crops/table-001.png",
+          "notes": "Use crop if native table cannot be checked reliably."
+        },
+        {
+          "type": "footnote",
+          "text": "* Example note.",
+          "bbox": [100, 1320, 1100, 1460]
+        }
+      ]
+    }
+  ]
+}

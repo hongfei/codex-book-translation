@@ -1,0 +1,46 @@
+{
+  "book": {
+    "title": "Example Book",
+    "author": "Example Author",
+    "translator": "Example Translator",
+    "source_language": "en",
+    "language": "es",
+    "source": "original/source.pdf"
+  },
+  "sections": [
+    {
+      "id": "front-title",
+      "type": "title_page",
+      "title": "Title Page",
+      "source_pages": [1],
+      "xhtml": "src/target-xhtml/front-title.xhtml"
+    },
+    {
+      "id": "chapter-001",
+      "type": "chapter",
+      "title": "Chapter 1: Example",
+      "source_pages": [12, 13, 14],
+      "source_file": "src/extracted-text/chapter-001.txt",
+      "draft_md": "src/target-draft-md/chapter-001.md",
+      "xhtml": "src/target-xhtml/chapter-001.xhtml",
+      "figures": [
+        {
+          "id": "fig-001",
+          "label": "Figure 1",
+          "source_page": 13,
+          "crop": "assets/display-crops/fig-001.png",
+          "alt": "Example figure",
+          "caption": "Figure 1. Example figure"
+        }
+      ],
+      "notes": [
+        {
+          "id": "note-001",
+          "anchor": "chapter-001-note-ref-001",
+          "placement": "nearby",
+          "backlink": "chapter-001-note-back-001"
+        }
+      ]
+    }
+  ]
+}

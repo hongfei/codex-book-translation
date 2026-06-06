@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Publisher Grade Book Page Map",
+  "type": "object",
+  "required": ["source", "pages"],
+  "properties": {
+    "source": {
+      "type": "object",
+      "required": ["path"],
+      "properties": {
+        "path": {"type": "string"},
+        "title": {"type": "string"},
+        "author": {"type": "string"},
+        "edition": {"type": "string"},
+        "page_count": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": true
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["page", "image"],
+        "properties": {
+          "page": {"type": "integer", "minimum": 1},
+          "image": {"type": "string"},
+          "chapter": {"type": "string"},
+          "section": {"type": "string"},
+          "page_type": {
+            "type": "string",
+            "enum": ["cover", "copyright", "toc", "front_matter", "body", "appendix", "notes", "bibliography", "index", "back_matter", "blank", "other"]
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["heading", "paragraph", "quote", "footnote", "endnote", "figure", "table", "chart", "formula", "sidebar", "caption", "header", "footer", "page_number", "other"]
+                },
+                "label": {"type": "string"},
+                "text": {"type": "string"},
+                "bbox": {
+                  "type": "array",
+                  "items": {"type": "number"},
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "description": "left, top, right, bottom in page-image pixels"
+                },
+                "crop": {"type": "string"},
+                "notes": {"type": "string"}
+              },
+              "additionalProperties": true
+            }
+          },
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
