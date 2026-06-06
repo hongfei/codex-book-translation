@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Book Translation"
+  short_description: "Translate books into publication-ready ebooks"
+  default_prompt: "Use $codex-book-translation to translate this source book into a polished EPUB while preserving figures, notes, and structure."

@@ -6,7 +6,7 @@
 Review status: User requested execution
 Role: Codex skill maintainer and localization editor
 
-Prepare the `publisher-grade-book-translation` Codex skill for community sharing by copying it into this repository, translating Chinese content to English, validating the resulting skill, and pushing the initial version to GitHub.
+Prepare the `codex-book-translation` Codex skill for community sharing by copying it into this repository, translating Chinese content to English, validating the resulting skill, and pushing the initial version to GitHub.
 
 ## Progress
 - [x] Clone `git@github.com:hongfei/codex-book-translation.git` under `~/Developer`
@@ -15,6 +15,7 @@ Prepare the `publisher-grade-book-translation` Codex skill for community sharing
 - [x] Validate the skill and helper scripts
 - [x] Commit and push to GitHub
 - [x] Install recommended local dependencies and document them
+- [x] Rename skill to `codex-book-translation` and move skill contents to the repo root
 
 ## Pending Tasks
 
@@ -25,7 +26,7 @@ None.
 ### Repository Preparation
 Status: Completed
 
-Result: Cloned the empty GitHub repository and copied the existing `publisher-grade-book-translation` skill into it.
+Result: Cloned the empty GitHub repository and copied the existing source skill into it.
 
 ### Translation and Validation
 Status: Completed
@@ -51,3 +52,8 @@ Result:
 - Verified `fitz` and `PIL` imports with Homebrew Python.
 - Verified key command-line tools are available on `PATH`.
 - Added dependency guidance and install commands to `README.md`.
+
+### Root Skill Rename
+Status: Completed
+
+Result: Renamed the skill to `codex-book-translation` and moved `SKILL.md`, `agents/`, `references/`, `scripts/`, and `templates/` into the repository root.

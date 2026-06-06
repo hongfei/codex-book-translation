@@ -1,5 +1,5 @@
 ---
-name: publisher-grade-book-translation
+name: codex-book-translation
 description: "Produce publisher-grade translated books from source books or PDFs: faithful translation, natural editorial polish, figure/table/note preservation, EPUB or ebook construction, and cross-checking against the original pages. Use for long-form literary, nonfiction, academic, technical, illustrated, textbook, report, or reference-book translation projects."
 ---
 
