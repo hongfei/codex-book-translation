@@ -14,6 +14,7 @@ Prepare the `publisher-grade-book-translation` Codex skill for community sharing
 - [x] Translate skill content to English
 - [x] Validate the skill and helper scripts
 - [x] Commit and push to GitHub
+- [x] Install recommended local dependencies and document them
 
 ## Pending Tasks
 
@@ -41,3 +42,12 @@ Result:
 Status: Completed
 
 Result: Committed the translated skill and pushed it to `git@github.com:hongfei/codex-book-translation.git`.
+
+### Dependency Setup
+Status: Completed
+
+Result:
+- Installed or verified `epubcheck`, `pandoc`, `poppler`, `tesseract`, `tesseract-lang`, `imagemagick`, `pymupdf`, `pillow`, and Calibre.
+- Verified `fitz` and `PIL` imports with Homebrew Python.
+- Verified key command-line tools are available on `PATH`.
+- Added dependency guidance and install commands to `README.md`.
