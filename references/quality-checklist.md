@@ -3,6 +3,8 @@
 ## Text
 
 - The translation is faithful to the source meaning and natural in the target language, without obvious translationese.
+- Body-text translation was authored by the agent from source context; no machine-translation library, translation API, local translation model, or browser page translation generated the draft prose.
+- Any existing external or suspected machine-translated draft was treated as low-trust and retranslated or fully reviewed against the source before reuse.
 - Numbers, dates, proportions, names, quotations, and page references are correct.
 - Terms, proper names, forms of address, and chapter titles are consistent across the book.
 - No OCR remnants remain: broken words, broken URLs, incorrect fractions, headers/footers, or page numbers mixed into the text.

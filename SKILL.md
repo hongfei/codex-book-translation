@@ -1,6 +1,6 @@
 ---
 name: codex-book-translation
-description: "Produce publisher-grade translated books from source books or PDFs: faithful translation, natural editorial polish, figure/table/note preservation, EPUB or ebook construction, and cross-checking against the original pages. Use for long-form literary, nonfiction, academic, technical, illustrated, textbook, report, or reference-book translation projects."
+description: "Produce publisher-grade translated books from source books or PDFs with agent-authored translation and polish: do not use machine-translation libraries, translation APIs, local translation models, or browser translation to generate the prose. Preserve figures/tables/notes, build EPUB or ebook outputs, and cross-check against original pages. Use for long-form literary, nonfiction, academic, technical, illustrated, textbook, report, or reference-book translation projects."
 ---
 
 # Publisher-Grade Book Translation and Ebook Production
@@ -23,7 +23,9 @@ If the target language is not specified and the user writes in Chinese, default 
 - Establish a page-by-page visual baseline first; extracted text is a working draft, not the authority.
 - Do not treat Markdown as the only intermediate format. Markdown is suitable for translation drafts; structure and publishing semantics must live in JSON/XHTML.
 - Translate faithfully without being literalistic; prefer target-language prose that readers understand naturally.
-- Read context manually while translating and polishing. Use scripts only for extraction, construction, checks, and issue localization.
+- The current AI agent must read context and author the translation and polish directly. Use scripts only for extraction, construction, checks, and issue localization.
+- Do not delegate body-text translation to machine-translation tools or models: do not call Python translation libraries, local Hugging Face/Transformers translation models, DeepL/Google Translate/Baidu/Youdao APIs, browser page translation, or similar MT tools to generate draft prose.
+- You may use dictionaries, terminology databases, authoritative references, or web search to verify terms and facts, but final translated sentences must be written by the agent from the source text, context, glossary, and target-language style.
 - Create a glossary and style sheet for every project, then apply them consistently across the whole book.
 - Do not turn complex pages into whole-page screenshots. Crop only real figures, tables, formulas, illustrations, or complex layout regions.
 - When charts or tables cannot be reflowed reliably, use cropped images from the original page and remove broken OCR table remnants from body text.
@@ -126,6 +128,8 @@ For specialist books, create at least a small glossary first. For fiction, prior
 ### 5. Batch Translation
 
 For every batch:
+- Have the agent write the translation directly from the source text, page screenshots, context, and glossary; do not run machine translation first and then patch it.
+- If a project already contains suspected machine-translated drafts, treat them as low-trust references only; return to the source and retranslate or fully review each passage before reuse.
 - Translate or revise against both page screenshots and the source working draft.
 - Preserve numbers, dates, proportions, page references, quotations, note markers, and captions.
 - Fix broken words, broken URLs, incorrect fractions, hard line breaks, and leftover hyphenation.
@@ -194,6 +198,7 @@ Run checks for every batch and final version:
 - Escaped-note remnants
 - Numeric lines misclassified as notes
 - Note anchors and return links
+- Machine-translation artifacts: sentence-by-sentence literalism, drifting terminology, context errors, mechanical synonym swaps, or sudden register shifts.
 - Use `scripts/validate_images.py` for basic image-asset checks.
 
 Passing automated validation does not mean the book is complete; the final version still requires human review.
@@ -224,6 +229,7 @@ Also search for project-specific OCR errors, broken names, bad links, wrong head
 
 - Final EPUB or requested format has been generated.
 - In-scope chapters and back matter have been translated and manually polished.
+- Body text was translated by the agent from source context; no machine-translation libraries, translation APIs, or local translation models were used to generate the prose.
 - Figures and tables have been reflowed or cropped, then manually checked.
 - Notes display correctly.
 - Validation reports pass.
